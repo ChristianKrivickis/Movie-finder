@@ -13,14 +13,14 @@
         <h3>{{movieData.Error}}</h3>
       </div>
       <div *ngIf='movieData.Title'>
-        <img src='{{movie.Data.Poster}}'>
+        <img src='{{movieData.Poster}}'>
       </div>
     </div>
 
     <div class="col-sm-8">
       <div *ngIf="movieData.Title">
-        <h1>{{moiveData.Title}}</h1>
-        <h2>Directed by : {{moiveData.Director}}</h2>
+        <h1>{{movieData.Title}}</h1>
+        <h2>Directed by : {{movieData.Director}}</h2>
       </div>
     </div>
   </div>
