@@ -19,11 +19,11 @@ export class AppComponent {
   getMovieDetails(movieName:string) : boolean {
     this._ombdbService.getMovieData(movieName).subscribe(
       movieData => {
-        this.movieData=movieData;
+        this.movieData = movieData;
         console.log("Director Name: " + this.movieData.Director);
       },
       error => this.errorMessage = <any>error
     );
-    return false;
+  return false;
   }
 }

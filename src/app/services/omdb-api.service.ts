@@ -9,8 +9,9 @@ import { IOMDResponse } from "../omdbresponse";
 })
 
 export class OmdbApiService {
-  private _siteURL="https://www.ombdapi.com/";
-  private _key="?apikey=12a6fa17&t=";
+  private _siteURL="https://www.omdbapi.com/";
+  private _id="?t=";
+  private _key="&apikey=cf23251a";
   private handleError(err:HttpErrorResponse) {
     console.log("OmdbApiService: " + err.message);
     return Observable.throw(err.message);
@@ -19,7 +20,7 @@ export class OmdbApiService {
   constructor(private _http:HttpClient) { }
 
   getMovieData(movieName) : Observable<IOMDResponse> {
-    return this._http.get<IOMDResponse>(this._siteURL + this._key + movieName)
+    return this._http.get<IOMDResponse>(this._siteURL + this._id + movieName + this._key)
     .pipe(
       tap(data => console.log("Moviedata/error" + JSON.stringify(data))
     ),
