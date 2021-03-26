@@ -22,9 +22,9 @@ export class OmdbApiService {
   getMovieData(movieName) : Observable<IOMDResponse> {
     return this._http.get<IOMDResponse>(this._siteURL + this._id + movieName + this._key)
     .pipe(
-      tap(data => console.log("Moviedata/error" + JSON.stringify(data))
+      tap(data => console.log("Moviedata/error" + JSON.stringify(data) + "\tStudent ID: S00198911 | Student Name: Christian Krivickis")
     ),
-      catchError(this.handleError)
+      catchError(this.handleError),
     );
   }
 }
